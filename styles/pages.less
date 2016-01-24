@@ -1,0 +1,63 @@
+@import "variables";
+@import "mixins";
+
+// Preferences
+
+.preferences-wrap {
+
+	.templates-instructions {
+		font-size: @berend-font-size-small;
+		color: @berend-text-color-ui;
+	}
+
+	// Notes (such as under mail rules)
+	.platform-note {
+		max-width: none !important;
+		border-left: 0;
+		background: white;
+		padding: @berend-padding-small ( @berend-padding-small + 5px );
+		margin: @berend-padding-medium 0;
+		&:before {
+			color: @berend-text-color-dark;
+			margin-right: 5px;
+		}
+	}
+
+	.nylas-editable-list .items-wrapper .selected {
+		background: white;
+		color: @berend-text-color-dark;
+	}
+
+	// Accounts
+	.preferences-accounts .accounts-content .account-details,
+	.preferences-accounts .accounts-content .account-list {
+		width: 50%;
+		background: none;
+		> input {
+			font-size: 1em;
+		}
+	}
+
+	// Quick replies
+	.container-templates .template-name-btn {
+		margin-right: 0;
+	}
+
+	// Shortcuts
+	.container-keymaps {
+		max-width: none;
+	}
+
+	// Plugins
+	.plugins-view .inner,
+	.plugins-view .inner {
+		max-width: none;
+	}
+	input {
+		padding-left: @berend-padding-small !important;
+	}
+	.package {
+		border-radius: @berend-border-radius;
+	}
+
+}

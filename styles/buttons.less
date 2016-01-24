@@ -1,0 +1,200 @@
+@import "variables";
+@import "mixins";
+
+// Button reset
+.btn,
+.btn-toolbar,
+.btn-feedback {
+	#berend-mixin-button-reset;
+}
+
+// Large button
+.btn.btn-large {
+	padding-top: 0;
+	padding-bottom: 0;
+	font-size: @berend-font-size-small;
+}
+
+// Textual buttons
+.btn-text {
+	#berend-mixin-text-button;
+}
+
+// Toolbar buttons
+.btn-toolbar {
+	#berend-mixin-icon-button;
+	#berend-mixin-clear-text-button; // For "Clear selection" button
+	border: solid transparent !important;
+	border-width: 1px 0 !important;
+	background-clip: padding-box !important;
+	padding-top: 0;
+	padding-bottom: 0;
+	margin-left: @berend-padding-small !important;
+	.sheet-toolbar & {
+		margin-top: @berend-toolbar-padding !important;
+	}
+	&.mode-toggle.mode-false .content-mask {
+		background-color: @berend-dark-grey;
+	}
+}
+
+// Toolbar up/down arrow
+.message-toolbar-arrow {
+	padding-top: 0 !important;
+	display: flex;
+	img {
+		transition: background-color @berend-transition-time;
+		margin: auto;
+	}
+	&.down {
+		margin-left: @berend-padding-small;
+	}
+	&.up {
+		margin-right: @berend-padding-small;
+	}
+	&.disabled {
+		img {
+			background-color: @berend-medium-grey;
+		}
+		&:hover img {
+			background-color: @berend-medium-grey;
+		}
+	}
+}
+
+// Compose button
+.btn.item-compose {
+	#berend-mixin-button-green;
+	margin-right: -1px !important;
+	img {
+		display: none;
+	}
+	&:before {
+		content: "Compose";
+	}
+}
+
+// Feedback button
+.btn-feedback {
+	#berend-mixin-button-blue;
+	right: auto !important;
+	bottom: @berend-padding-small !important;
+	left: @berend-padding-small;
+	width: @berend-sidebar-width - @berend-padding-small - @berend-padding-small !important;
+	font-size: 0 !important;
+	&:before {
+		content: "Help & Feedback";
+	}
+	// In a message thread
+	#Thread & {
+		display: none;
+	}
+}
+
+// Send button
+.btn.btn-emphasis {
+	#berend-mixin-button-green;
+	width: 20%;
+	padding-left: @berend-text-button-padding - 5px !important;
+	margin: 0 !important;
+}
+
+// Message print icon
+#message-list .message-icons-wrap > * {
+	#berend-mixin-button-reset;
+	#berend-mixin-icon-button;
+	margin-left: 0 !important;
+	&:empty {
+		display: none;
+	}
+}
+
+// Preferences
+.preferences-wrap {
+
+	.btn:not(.template-name-btn),
+	.container-templates .section-title .template-name-btn {
+		#berend-mixin-button-blue;
+	}
+	.actions .btn,
+	.appearance-mode-switch .btn {
+		#berend-mixin-button-green;
+	}
+
+	// Sidebar menu
+	.preferences-sidebar {
+		.item {
+			transition: background-color @berend-transition-time;
+			padding-left: 0;
+			.disclosure-triangle {
+				padding-left: 2px;
+				width: @berend-padding-small;
+			}
+			.name {
+				transition: color @berend-transition-time;
+			}
+			&.active:not(.has-subitems) {
+				background-color: white;
+				border-right: 0;
+				.name {
+					color: @berend-text-color-dark;
+				}
+			}
+			.subitems {
+				background: none;
+				box-shadow: none;
+				.subitem {
+					padding-left: @berend-padding-medium;
+				}
+			}
+		}
+		.item.active .subitem {
+			transition: background-color @berend-transition-time, color @berend-transition-time;
+			&.active {
+				color: @berend-text-color-dark;
+				background-color: white;
+				border-right: 0;
+			}
+		}
+	}
+
+	// Appearance option buttons
+	.appearance-mode-switch .appearance-mode {
+		border-radius: @berend-border-radius;
+		border-color: @berend-border-light;
+		color: @berend-text-color-ui;
+		transition: border-color @berend-transition-time, color @berend-transition-time;
+		img {
+			background-color: @berend-border-medium;
+			transition: background-color @berend-transition-time;
+		}
+		&.active {
+			border-color: @berend-border-dark;
+			color: @berend-text-color-dark;
+			img {
+				background-color: @berend-ui-grey;
+			}
+		}
+	}
+
+	// Toggle signature HTML
+	.toggle-mode a {
+		#berend-mixin-button-reset;
+		#berend-mixin-button-blue;
+	}
+
+	// Process all mail rules button
+	.container-mail-rules .btn {
+		#berend-mixin-button-green;
+	}
+	.container-mail-rules .rule-detail .well .well-row .actions .btn {
+		#berend-mixin-button-blue;
+		width: auto;
+	}
+
+}
+
+// Apply changes button
+.btn.btn-small {
+	#berend-mixin-button-green;
+}

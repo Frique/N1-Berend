@@ -1,0 +1,143 @@
+@import "variables";
+@import "mixins";
+
+@berend-collapsed-message-padding-vertical: @berend-padding-medium - 5px;
+@berend-collapsed-message-padding-horizontal: @berend-padding-medium;
+@berend-expanded-message-padding-vertical: @berend-padding-medium - 5px;
+@berend-expanded-message-padding-horizontal: @berend-padding-medium;
+
+#message-list {
+
+	// Subject
+	.message-subject-wrap {
+		width: auto;
+		padding-right: @berend-padding-medium;
+		padding-left: @berend-padding-medium;
+		margin: @berend-padding-medium auto;
+		max-width: @berend-thread-max-width + ( @berend-padding-medium * 2 );
+		align-items: baseline;
+		.message-subject {
+			font-size: @berend-font-size-huge;
+			line-height: 1.2;
+			color: @berend-text-color-headers;
+			flex: 1;
+		}
+	}
+
+	// Importance icon
+	.mail-important-icon {
+		margin-bottom: 0;
+		margin-right: @berend-padding-small;
+	}
+
+	// Print etc. icons
+	.message-icons-wrap {
+		margin-right: 0;
+		margin-left: auto; // Make it always stick to the right
+		order: 2; /* Behind labels */
+	}
+
+	// Notifications
+	.message-list-headers {
+		max-width: @berend-thread-max-width;
+		> * {
+			width: 100%;
+		}
+		.phishingIndicator {
+			border-radius: @berend-border-radius;
+			padding: @berend-expanded-message-padding-vertical @berend-expanded-message-padding-horizontal;
+			margin-bottom: @berend-padding-medium;
+		}
+		p:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	// Thread messages
+	.message-item-wrap {
+		max-width: @berend-thread-max-width;
+		width: auto;
+		padding: 0;
+		margin-bottom: -1px;
+
+		// Item inner
+		.message-item-white-wrap {
+			border-radius: @berend-border-radius;
+			box-shadow: none;
+			border: 1px solid @berend-border-light;
+			@media ( max-width: @berend-thread-max-width ) {
+				border-right: 0;
+				border-left: 0;
+			}
+		}
+		.message-item-area {
+			background: white;
+			max-width: none;
+			padding: 0 @berend-expanded-message-padding-horizontal @berend-expanded-message-padding-vertical !important;
+		}
+		&.collapsed .message-item-white-wrap {
+			background: none;
+			padding: 0;
+			.message-item-area {
+				background: none;
+				padding: @berend-collapsed-message-padding-vertical @berend-collapsed-message-padding-horizontal !important;
+			}
+			.collapsed-from,
+			.collapsed-snippet {
+				margin-right: @berend-padding-small;
+			}
+			.collapsed-from,
+			.collapsed-snippet,
+			.collapsed-timestamp {
+				color: @berend-text-color-medium;
+				cursor: default;
+			}
+		}
+
+		// Message header
+		.message-header {
+			padding-top: @berend-expanded-message-padding-vertical;
+			padding-bottom: @berend-expanded-message-padding-vertical;
+			.header-toggle-control {
+				top: 23px !important;
+			}
+			.message-header-right {
+				right: -10px;
+			}
+			.message-actions-wrap {
+				width: auto;
+			}
+		}
+
+		// Compose reply item
+		&.draft {
+			margin-top: @berend-padding-medium;
+			margin-bottom: @berend-padding-medium;
+		}
+
+		// Last item
+		&:last-child {
+			padding-bottom: 0;
+			margin-bottom: @berend-padding-medium;
+		}
+
+	}
+
+	// Reply area
+	.footer-reply-area-wrap {
+		width: auto;
+		max-width: @berend-thread-max-width;
+		border: 0;
+		box-shadow: none;
+		background: none;
+		margin-top: @berend-padding-medium;
+		text-align: center;
+		.footer-reply-area {
+			#berend-mixin-button-reset;
+			#berend-mixin-button-blue;
+			width: auto;
+			max-width: none;
+		}
+	}
+
+}

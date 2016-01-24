@@ -1,0 +1,84 @@
+@import "variables.less";
+
+.composer-inner-wrap {
+	background: white;
+
+	// Compose content
+	.composer-centered {
+		max-width: @berend-compose-max-width;
+		padding: ( @berend-padding-medium - 5px ) @berend-padding-medium;
+	}
+
+	// Expanded recipients
+	.expanded-participants {
+		// Row
+		.composer-participant-field {
+			padding: 0;
+			margin: 0;
+			min-height: 0;
+			border-color: @berend-border-light;
+		}
+		// Label
+		.tokenizing-field .tokenizing-field-label {
+			padding: 0;
+			line-height: @berend-input-height;
+			color: @berend-placeholder-color;
+		}
+		// Input
+		.tokenizing-field .tokenizing-field-input input {
+			margin: 0;
+		}
+		// Bcc Cc
+		.composer-participant-actions {
+			padding: 0;
+			.header-action {
+				font-size: 1em;
+				line-height: @berend-input-height;
+				color: @berend-placeholder-color;
+			}
+		}
+	}
+
+	// Collapsed recipients & subject
+	.collapsed-composer-participants,
+	.compose-subject-wrap {
+		color: @berend-placeholder-color;
+		margin: 0;
+		padding: 0;
+		border-color: @berend-border-light;
+		line-height: @berend-input-height;
+		input {
+			padding: 0;
+			&:focus {
+				border: 0;
+			}
+		}
+	}
+
+	// Email content
+	.compose-body {
+		margin: 0;
+		div[contenteditable] {
+			padding-top: @berend-padding-medium - 5px;
+			padding-right: 0;
+			padding-left: 0;
+			color: @berend-text-color-dark;
+		}
+	}
+
+	// Bottom action bar (in thread + full compose window)
+	.composer-action-bar-wrap {
+		.composer-action-bar-content {
+			max-width: @berend-compose-max-width;
+			padding: @berend-padding-small;
+		}
+	}
+	// Bottom action bar (in full compose window)
+	.composer-full-window & {
+		.composer-action-bar-wrap {
+			background: @berend-bottom-toolbar-color;
+			box-shadow: none;
+		}
+	}
+
+}

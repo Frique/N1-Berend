@@ -1,0 +1,211 @@
+@import "variables";
+@import "mixins";
+
+// Folder / labels
+.mail-label {
+	color: @berend-text-color-ui !important;
+	background: none !important;
+	border: 1px solid @berend-border-medium !important;
+	border-radius: @berend-border-radius;
+	box-shadow: none !important;
+	margin-right: 0;
+	margin-left: @berend-padding-label-spacing;
+	font-size: @berend-font-size-tiny;
+	transition: color @berend-transition-time, border-color @berend-transition-time;
+	padding: 0 6px;
+	order: 1; /* Behind subject in threads list, before print icon in message list */
+	-webkit-filter: none !important;
+	&.removable {}
+	img.content-mask {
+		background-color: @berend-medium-grey !important;
+		cursor: pointer;
+	}
+}
+
+.thread-list,
+.draft-list {
+
+	// Thread
+	.list-item {
+
+		background: none !important;
+
+		// Focused
+		&.focused {
+			color: @berend-text-color-ui;
+			// From
+			.participants span,
+			// Subject
+			.details .subject {
+				font-weight: 600 !important;
+			}
+			// Labels
+			.mail-label {
+				box-shadow: none !important;
+			}
+		}
+
+		// Unread
+		&.unread {
+			color: @berend-text-color-dark;
+			background: white !important;
+
+			// Date
+			.timestamp {
+				color: @berend-text-color-dark;
+				opacity: 1;
+			}
+
+		}
+
+		// Each column
+		.list-column {
+			border-color: @berend-border-light !important;
+			border-left: 0 !important;
+			padding: 0 @berend-padding-list-item-horizontal !important;
+			&.list-column-Check,
+			&.list-column-Check .checkmark,
+			&.list-column-★,
+			&.list-column-Participants,
+			&.list-column-Message,
+			&.list-column-Date {
+				display: flex;
+				* {
+					margin-top: auto;
+					margin-bottom: auto;
+				}
+			}
+			&.list-column-Check {
+				padding-right: 0 !important;
+			}
+			&.list-column-Participants {
+				padding-left: 0 !important;
+			}
+		}
+
+		// Hover actions
+		.list-column-HoverActions {
+			padding: 0 !important;
+			.inner {
+				background: linear-gradient( to right, rgba( red( @berend-background-primary ), green( @berend-background-primary ), blue( @berend-background-primary ), 0 ) 0%, rgba( red( @berend-background-primary ), green( @berend-background-primary ), blue( @berend-background-primary ), 1 ) 50% ) !important;
+				.thread-injected-quick-actions {
+					margin: 0;
+					> * {
+						-webkit-filter: none !important;
+					}
+					.action {
+						margin: auto;
+						margin-left: 5px;
+						opacity: 0.5;
+						transition: opacity @berend-transition-time;
+						&:hover {
+							opacity: 1;
+						}
+					}
+				}
+			}
+		}
+		&.unread .list-column-HoverActions .inner {
+			background: linear-gradient( to right, rgba( 255, 255, 255, 0 ) 0%, rgba( 255, 255, 255, 1 ) 50% ) !important;
+		}
+
+		// Checkmark
+		.checkmark {
+			position: static;
+			padding: 0;
+		}
+
+		// From,
+		.participants,
+		// Subject
+		.details .subject,
+		// Snippet
+		.details .snippet,
+		// Date
+		.timestamp {
+			top: 0;
+			font-size: @berend-font-size-medium;
+			font-weight: normal;
+			line-height: 1;
+			-webkit-font-smoothing: antialiased;
+		}
+
+		// Subject, snippet & labels
+		.details {
+			width: 100%;
+			.snippet {
+				color: @berend-text-color-light !important;
+				opacity: 1;
+			}
+		}
+
+		// Unread icon
+		.thread-icon-unread:not(:hover) {
+			background-image: none;
+		}
+
+		.thread-icon,
+		// Star icon
+		.thread-icon-star,
+		// Importance icon
+		.mail-important-icon {
+			cursor: pointer;
+			-webkit-filter: none !important;
+		}
+
+    }
+
+	// Single pane mode only
+	.sheet.mode-list & {}
+
+	// Two Panel mode only
+	&.thread-list-narrow {
+		.list-item {
+
+			.list-column {
+				padding: @berend-padding-list-item-horizontal @berend-padding-list-item-horizontal @berend-padding-list-item-vertical @berend-padding-list-item-vertical !important;
+			}
+			.thread-icon {
+				margin-top: -7px;
+				margin-left: -5px;
+			}
+			.mail-important-icon {
+				margin-top: -2px;
+				margin-left: -3px;
+			}
+			.subject,
+			.snippet {
+				margin-left: 25px;
+				margin-right: 0;
+				padding: 0;
+			}
+			.participants span,
+			.subject,
+			.snippet {
+				font-size: @berend-font-size-medium;
+				font-weight: normal !important;
+				-webkit-font-smoothing: antialiased;
+			}
+			.snippet {
+				opacity: 1;
+				color: @berend-text-color-light !important;
+			}
+			.timestamp {
+				margin-right: 0;
+			}
+
+			// Focused
+			&.focused {
+				&:not(.unread) {
+					color: @berend-text-color-ui;
+				}
+				.participants span,
+				.subject {
+					font-weight: 600 !important;
+				}
+			}
+
+		}
+	}
+
+}

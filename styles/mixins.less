@@ -1,0 +1,88 @@
+@import "variables";
+
+#berend-mixin-button-reset {
+	display: inline-block;
+	box-shadow: none !important;
+	border: 0 !important;
+	border-radius: @berend-border-radius !important;
+	cursor: pointer !important;
+	transition: background-color @berend-transition-time;
+	height: @berend-button-height !important;
+	line-height: @berend-button-height - ( @berend-button-border-width * 2 );
+	text-decoration: none;
+	padding-top: 0;
+	padding-bottom: 0;
+	&:before {
+		vertical-align: top;
+		font-size: @berend-font-size-small;
+		font-weight: 600;
+		white-space: nowrap;
+		color: inherit;
+	}
+	&:hover img.content-mask {
+		background-color: @berend-dark-grey;
+	}
+	img.content-mask {
+		transition: background-color @berend-transition-time, opacity @berend-transition-time;
+	}
+	&.btn-disabled {
+		opacity: 0.5;
+		cursor: default !important;
+	}
+}
+
+// Icon buttons
+#berend-mixin-icon-button {
+	padding-right: @berend-padding-small;
+	padding-left: @berend-padding-small;
+}
+
+// Textual buttons
+#berend-mixin-text-button {
+	padding: 0 @berend-text-button-padding !important;
+	text-align: center;
+}
+
+#berend-mixin-clear-text-button {
+	background: none !important;
+	color: @berend-text-color-medium;
+	transition: color @berend-transition-time, background-color @berend-transition-time;
+	&:hover {
+		color: @berend-text-color-dark;
+	}
+}
+
+// Green UI button
+#berend-mixin-button-green {
+	#berend-mixin-text-button;
+	background: @berend-green !important;
+	color: white;
+	border: 0;
+	img.content-mask {
+		background-color: white;
+		opacity: 0.5;
+	}
+	&:hover {
+		background: @berend-green-hover !important;
+		img.content-mask {
+			opacity: 0.85;
+		}
+	}
+}
+
+#berend-mixin-button-blue {
+	#berend-mixin-text-button;
+	background: @berend-blue !important;
+	color: white;
+	border: 0;
+	img.content-mask {
+		background-color: white !important;
+		opacity: 0.5;
+	}
+	&:hover {
+		background: @berend-blue-hover !important;
+		img.content-mask {
+			opacity: 0.85;
+		}
+	}
+}

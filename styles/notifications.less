@@ -1,0 +1,27 @@
+@import "variables";
+@import "mixins";
+
+// Update notice etc.
+.notifications-sticky {
+
+	.notifications-sticky-item {
+		border-top: 0;
+		border-bottom-color: @berend-border-light;
+		background: white !important;
+		color: @berend-text-color-dark;
+		padding-left: @berend-padding-list-item-horizontal;
+
+		// Buttons
+		a {
+			#berend-mixin-button-reset;
+			#berend-mixin-text-button;
+			#berend-mixin-clear-text-button;
+			border-radius: 0 !important;
+			&.default {
+				#berend-mixin-button-green;
+			}
+		}
+
+	}
+
+}

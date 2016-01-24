@@ -1,0 +1,204 @@
+@import "variables";
+@sidebar-icon-width: 28px;
+
+// Sidebar width
+.column-RootSidebar,
+.column-MessageListSidebar,
+.preferences-wrap .preferences-sidebar {
+
+	min-width: @berend-sidebar-width !important;
+	max-width: @berend-sidebar-width !important;
+
+	+ .flexbox-handle-horizontal {
+		cursor: default; // Since the sidebar is currently not resizable in this theme
+	}
+
+}
+
+// Activity notice
+.sidebar-activity-transition-wrapper {
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	z-index: 3;
+}
+.sidebar-activity {
+	box-shadow: none;
+	text-align: center;
+	background: @berend-bottom-toolbar-color;
+	.item {
+		border-top: 1px solid @berend-border-medium;
+		border-bottom: 0;
+		height: @berend-toolbar-height;
+		> div {
+			float: none !important;
+			display: inline-block;
+			padding: @berend-padding-small ( @berend-padding-list-item-vertical / 2 ) 0 !important;
+			line-height: @berend-button-height;
+			vertical-align: bottom;
+		}
+	}
+}
+
+// Applies to both the account switcher & the inbox list
+#account-switcher,
+#account-sidebar {
+	background: none;
+
+	// List items
+	.item {
+		font-size: @berend-font-size-medium;
+		line-height: @sidebar-icon-width;
+		color: @berend-text-color-medium;
+		transition: color @berend-transition-time, background-color @berend-transition-time;
+		&:hover,
+		&.selected {
+			color: @berend-text-color-dark;
+		}
+		&.selected {
+			background: none;
+			img.content-mask {
+				background-color: @berend-ui-grey;
+			}
+			//.name {
+			//	font-weight: 600;
+			//}
+		}
+		// Icon
+		img.content-mask {
+			background: @berend-light-grey;
+			transition: background-color @berend-transition-time;
+		}
+	}
+
+}
+
+// Account switcher
+#account-switcher {
+
+	border-color: @berend-border-light;
+
+	// Dropdown
+	.dropdown {
+		border: 0;
+		box-shadow: none;
+		background: none;
+		height: 100%;
+		margin-top: 0;
+		top: @sidebar-icon-width + ( @berend-padding-list-item-horizontal * 2 ) + 1px;
+	}
+
+	// List items
+	.item {
+		.gravatar {
+			top: auto;
+			border-radius: @berend-border-radius;
+		}
+		> div:first-child img {
+			margin-top: auto !important;
+			vertical-align: top;
+		}
+		// Account name
+		.name {
+			padding-left: @berend-padding-list-item-vertical;
+		}
+		&:hover {
+			background: white;
+		}
+		// Active account item
+		&.primary-item {
+			padding-top: @berend-padding-list-item-horizontal;
+			padding-bottom: @berend-padding-list-item-horizontal;
+			padding-left: @berend-padding-list-item-horizontal;
+			.name {
+				color: @berend-text-color-dark;
+			}
+		}
+		// Other account items
+		&.secondary-item {
+			padding-top: @berend-padding-list-item-vertical;
+			padding-right: @berend-padding-list-item-horizontal;
+			padding-bottom: @berend-padding-list-item-horizontal / 2;
+			padding-left: @berend-padding-list-item-horizontal;
+			+ .secondary-item {
+				padding-top: @berend-padding-list-item-horizontal / 2;
+			}
+		}
+	}
+
+}
+
+// Inbox, folder list
+#account-sidebar {
+	transition: opacity @berend-transition-time;
+	.open + & {
+		opacity: 0;
+	}
+	// List section
+	section {
+		position: relative;
+		margin-bottom: @berend-padding-list-item-vertical;
+	}
+	// List heading
+	.heading {
+		font-size: @berend-font-size-medium;
+		font-weight: normal;
+		color: @berend-text-color-light;
+		letter-spacing: normal;
+		padding: @berend-padding-list-item-vertical @berend-padding-list-item-horizontal ( @berend-padding-list-item-vertical / 2 );
+		cursor: default;
+	}
+	.disclosure-triangle {
+		width: @berend-padding-list-item-horizontal;
+		padding-right: ( @berend-padding-list-item-horizontal - 6px ) / 2;
+		padding-left: ( @berend-padding-list-item-horizontal - 6px ) / 2;
+	}
+	.item .name {
+		padding-right: @berend-padding-list-item-horizontal;
+	}
+	// Counter
+	.item .item-count-box,
+	.add-item-button {
+		position: absolute;
+		right: @berend-padding-list-item-vertical;
+		background: none !important;
+		color: @berend-text-color-light;
+		font-size: 1em;
+		font-weight: normal;
+		box-shadow: none;
+		// Inbox unread count
+		&.inbox {
+			color: @berend-blue;
+			//&:before {
+			//	content: "+";
+			//}
+		}
+	}
+	.add-item-button {
+		top: @berend-padding-list-item-vertical;
+		img {
+			background-color: @berend-light-grey;
+			transition: background-color @berend-transition-time;
+		}
+		&:hover img {
+			background-color: @berend-ui-grey;
+		}
+	}
+}
+
+// Scrollbar
+.scrollbar-track {
+	border: 0;
+	background: none;
+	transition: opacity @berend-transition-time;
+	transition-delay: 0s;
+	width: @berend-scrollbar-width;
+	.scrollbar-handle {
+		border-color: @berend-scrollbar-color;
+		background: @berend-scrollbar-color;
+	}
+	&.dragging .scrollbar-handle {
+		border-color: @berend-scrollbar-active-color;
+		background: @berend-scrollbar-active-color;
+	}
+}

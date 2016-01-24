@@ -1,0 +1,27 @@
+{
+	"name": "N1-Berend",
+	"displayName": "Berend",
+	"theme": "ui",
+	"version": "1.0.0",
+	"description": "Some minimal niceness.",
+	"license": "MIT",
+	"author": "Berend de Jong <please@frique.me>",
+	"engines": {
+		"nylas": "*"
+	},
+	"styleSheets": [
+		"buttons",
+		"components",
+		"compose-window",
+		"email-frame",
+		"form-fields",
+		"notifications",
+		"pages",
+		"resets",
+		"sidebar-left",
+		"sidebar-right",
+		"thread",
+		"threads",
+		"toolbar"
+	]
+}

@@ -1,0 +1,72 @@
+@import "variables";
+
+.column-MessageListSidebar {
+
+	background: none;
+	color: @berend-text-color-ui;
+	border-color: @berend-border-light;
+	margin-left: -1px; // To cover up a message's right border when they touch
+
+	.sidebar-section {
+
+		padding: @berend-padding-medium;
+
+		// Top contact card
+		.contact-card-fullcontact {
+
+			// Name
+			h1.name {
+				font-size: @berend-font-size-huge;
+				padding-top: 0;
+				padding-bottom: @berend-padding-small;
+				~ * {
+					font-size: @berend-font-size-small;
+				}
+			}
+
+			// Social links
+			.social-profile {
+				margin-top: 0;
+				.social-icon {
+					margin-top: 8px;
+				}
+				.social-link {
+					font-size: @berend-font-size-small;
+					padding-left: 20px;
+				}
+			}
+
+			// Icons
+			img.content-mask {
+				background-color: @berend-medium-grey;
+				transition: background-color @berend-transition-time;
+			}
+			:hover > img.content-mask {
+				background-color: @berend-blue;
+			}
+
+		}
+
+		// Section header (such as Thread Participants)
+		h2 {
+			border-color: @berend-border-light;
+			font-size: @berend-font-size-small;
+			font-weight: normal;
+			text-transform: none;
+			color: @berend-text-color-headers;
+			padding-bottom: @berend-padding-list-item-vertical / 2;
+			margin-bottom: @berend-padding-list-item-vertical / 2;
+		}
+
+		// Thread Participants
+		.sidebar-contact-list {
+			min-height: 0;
+			.contact {
+				font-weight: normal !important;
+				font-size: @berend-font-size-small;
+			}
+		}
+
+	}
+
+}

@@ -1,0 +1,37 @@
+@import "variables";
+
+input[type="text"],
+input[type="email"],
+input[type="date"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="month"],
+input[type="number"],
+input[type="password"],
+input[type="range"],
+input[type="search"],
+input[type="tel"],
+input[type="time"],
+input[type="url"] {
+
+	height: @berend-input-height !important;
+	box-shadow: none !important;
+	transition: border-color @berend-transition-time;
+
+	// Input icons
+	~ img {}
+
+}
+
+::-webkit-input-placeholder {
+	color: @berend-placeholder-color !important;
+}
+:placeholder-shown {
+	color: @berend-placeholder-color !important;
+}
+
+textarea:focus,
+input[type="text"]:focus,
+input[type="email"]:focus {
+	border-color: @berend-blue;
+}

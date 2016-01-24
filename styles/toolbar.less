@@ -1,0 +1,135 @@
+@import "variables";
+
+@toolbar-window-control-width: 12px;
+
+// Toolbar container
+.sheet-toolbar-container {
+	background-image: none;
+	background-color: @berend-toolbar-color;
+	box-shadow: none;
+	> div {
+		height: 100%;
+	}
+}
+.sheet-container .sheet-toolbar {
+	height: @berend-toolbar-height;
+	min-height: @berend-toolbar-height;
+	max-height: none;
+	border-bottom-color: @berend-border-medium;
+	.item-container .key-commands-region {
+		height: @berend-input-height;
+	}
+}
+
+// Slide-down toolbar with action icons
+.sheet-toolbar .selection-bar .absolute {
+	background: @berend-toolbar-color;
+	height: @berend-toolbar-height;
+	border: 0;
+	border-bottom: 1px solid @berend-border-medium;
+	right: 0;
+	left: 1px;
+	.inner {
+		height: 100%;
+		// Title text
+		.centered {
+			color: @berend-text-color-ui;
+			padding-top: 0;
+			line-height: @berend-toolbar-height;
+		}
+		> :first-child {
+			margin-left: @berend-padding-small / 2;
+		}
+		> :last-child {
+			margin-right: @berend-padding-small;
+		}
+	}
+	.category-picker {
+		margin-left: auto;
+	}
+}
+
+// Window controls
+.toolbar-window-controls {
+	margin-top: 0 !important;
+	margin-left: ( @berend-toolbar-height - @toolbar-window-control-width ) / 3;
+	display: flex;
+	button {
+		margin-top: auto;
+		margin-bottom: auto;
+	}
+}
+
+// Back link
+.sheet-toolbar .item-back {
+	display: flex;
+	padding-top: 0;
+	padding-left: @berend-padding-small;
+	.item-back-title {
+		font-size: @berend-font-size-huge;
+		color: @berend-text-color-ui;
+		transition: color @berend-transition-time;
+	}
+	img.content-mask {
+		background-color: @berend-text-color-ui;
+		transition: background-color @berend-transition-time;
+	}
+	&:hover {
+		.item-back-title {
+			color: @berend-text-color-headers;
+		}
+		img.content-mask {
+			background-color: @berend-text-color-headers;
+		}
+	}
+	> * {
+		margin: auto !important;
+	}
+}
+
+// Window title
+.sheet-toolbar .item-container .window-title {
+	line-height: @berend-toolbar-height;
+}
+
+// Search bar
+.search-bar {
+	width: 100%;
+	margin: @berend-toolbar-padding;
+	.layout-mode-split & {
+		margin-right: -1px;
+	}
+	.header-container {
+		height: auto !important;
+	}
+	// Magnifier icon
+	.search {
+		width: @berend-icon-size-medium;
+		top: 26px !important;
+		left: 26px !important;
+	}
+	// Clear input icon
+	.clear {
+		opacity: 0.5;
+		transition: opacity @berend-transition-time;
+		top: 16px !important;
+		right: 16px !important;
+		&:hover {
+			opacity: 1;
+		}
+	}
+	// Input
+	input {
+		padding-left: 34px !important;
+	}
+
+	// Search results
+	.content-container {
+		.item.selected {
+			background: @berend-blue;
+			color: white;
+			padding: ( @berend-padding-small - 5px ) @berend-padding-small;
+		}
+	}
+
+}
