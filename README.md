@@ -1,3 +1,5 @@
+![Preview 1](preview1@2x.png)
+
 I was like "What? I can style a mac app with CSS? Yes, plz."
 So here's version 1.0 as the result of a double weekend project.
 
