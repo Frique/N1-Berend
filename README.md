@@ -17,6 +17,7 @@ This theme has been tested on OSX 10.10.5, in N1 version 0.3.45.
 
 ### Todo
 - Test on Windows
+- Test on Linux
 - Responsive tweaks: Narrower sidebar width
 - Styling changes when window is not focused
 - Account list item hover style
