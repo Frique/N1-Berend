@@ -123,6 +123,12 @@
 		padding-left: 34px !important;
 	}
 
+	// On Windows
+	body.platform-win32 & {
+		margin-left: -1px;
+		margin-right: 0;
+	}
+
 	// Search results
 	.content-container {
 		.item.selected {
@@ -132,4 +138,12 @@
 		}
 	}
 
+}
+
+// Toolbar menu button on Windows
+.toolbar-menu-control {
+	margin-right: @berend-padding-small;
+}
+body.platform-win32.window-type-default .toolbar-menu-control img.content-mask {
+	top: auto;
 }

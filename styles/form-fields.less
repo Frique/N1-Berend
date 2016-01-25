@@ -18,8 +18,11 @@ input[type="url"] {
 	box-shadow: none !important;
 	transition: border-color @berend-transition-time;
 
-	// Input icons
-	~ img {}
+	// On Windows
+	body.platform-win32 & {
+		border-width: 1px;
+		border-radius: @berend-border-radius;
+	}
 
 }
 

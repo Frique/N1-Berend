@@ -60,6 +60,10 @@
 			background-color: @berend-medium-grey;
 		}
 	}
+	body.platform-win32 &:hover {
+		cursor: pointer;
+		background: none !important;
+	}
 }
 
 // Compose button
@@ -71,6 +75,11 @@
 	}
 	&:before {
 		content: "Compose";
+	}
+	// On Windows
+	body.platform-win32 & {
+		width: ~"calc( 100% - " ( @berend-padding-small * 2 ) ~" )";
+		margin-right: @berend-padding-small !important;
 	}
 }
 
