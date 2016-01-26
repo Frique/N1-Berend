@@ -69,12 +69,14 @@
 				border-right: 0;
 				border-left: 0;
 			}
+			.message-item-area {
+				background: white;
+				max-width: none;
+				padding: 0 @berend-expanded-message-padding-horizontal @berend-expanded-message-padding-vertical !important;
+			}
 		}
-		.message-item-area {
-			background: white;
-			max-width: none;
-			padding: 0 @berend-expanded-message-padding-horizontal @berend-expanded-message-padding-vertical !important;
-		}
+
+		// When collapsed
 		&.collapsed .message-item-white-wrap {
 			background: none;
 			padding: 0;
@@ -98,6 +100,7 @@
 		.message-header {
 			padding-top: @berend-expanded-message-padding-vertical;
 			padding-bottom: @berend-expanded-message-padding-vertical;
+			font-size: @berend-font-size-medium;
 			.header-toggle-control {
 				top: 23px !important;
 			}
@@ -106,6 +109,18 @@
 			}
 			.message-actions-wrap {
 				width: auto;
+			}
+			// From:
+			.from-contact,
+			.from-contact * {
+				color: @berend-text-color-dark !important;
+			}
+			// To:
+			.participant-type {
+				margin-top: 0;
+			}
+			.message-participants * {
+				color: @berend-text-color-medium;
 			}
 		}
 
