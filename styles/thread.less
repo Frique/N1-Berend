@@ -81,6 +81,7 @@
 			background: none;
 			padding: 0;
 			.message-item-area {
+				font-size: @berend-font-size-medium;
 				background: none;
 				padding: @berend-collapsed-message-padding-vertical @berend-collapsed-message-padding-horizontal !important;
 			}
@@ -134,6 +135,43 @@
 		&:last-child {
 			padding-bottom: 0;
 			margin-bottom: @berend-padding-medium;
+		}
+
+	}
+
+	// Minified bundle
+	.minified-bundle {
+
+		margin-top: 0 !important;
+		margin-right: 0;
+		margin-left: 0;
+
+		// Number of messages
+		.num-messages {
+			color: @berend-text-color-medium;
+			width: auto;
+			padding: ( @berend-padding-list-item-vertical / 2 ) @berend-padding-list-item-horizontal;
+			border-radius: @berend-border-radius;
+			font-size: @berend-font-size-medium;
+		}
+
+		.msg-lines {
+			max-width: @berend-thread-max-width;
+			margin-top: 0;
+			.msg-line {
+				border-radius: @berend-border-radius @berend-border-radius 0 0;
+				box-shadow: none;
+				border: 1px solid @berend-border-light;
+				border-bottom: 0;
+				background: @berend-background-primary;
+				&:last-child {
+					height: 6px !important;
+				}
+			}
+		}
+
+		+ .message-item-wrap {
+			margin-top: 0;
 		}
 
 	}
