@@ -28,6 +28,6 @@ This theme has been tested on OSX 10.10.5, in N1 version 0.3.45.
 - Better utilization of the global variables
 - Better thread list padding when the core allows styling it with CSS
 - Add padding to the bottom of the sidebar to accommodate for the feedback button
-- Fix styling of combined collapsed messages in a long thread
+- ~~Fix styling of combined collapsed messages in a long thread~~
 - Fix height of text format tooltip
 - Fix focused thread highlighting during keyboard navigation
