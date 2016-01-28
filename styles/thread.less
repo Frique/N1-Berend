@@ -129,6 +129,12 @@
 		&.draft {
 			margin-top: @berend-padding-medium;
 			margin-bottom: @berend-padding-medium;
+			.composer-outer-wrap {
+				box-shadow: none !important;
+			}
+			.composer-inner-wrap {
+				min-height: ~"calc( 100vh - " ( @berend-padding-medium * 2 ) ~" - " @berend-toolbar-height ~" )";
+			}
 		}
 
 		// Last item
@@ -184,6 +190,8 @@
 		box-shadow: none;
 		background: none;
 		margin-top: @berend-padding-medium;
+		//margin-bottom: ~"calc( 100vh - " @berend-button-height ~" - " @berend-padding-medium ~" - " @berend-toolbar-height ~" )";
+		margin-bottom: ~"calc( 50vh - " ( @berend-button-height / 2 ) ~" - " ( @berend-toolbar-height / 2 ) ~" )";
 		text-align: center;
 		.footer-reply-area {
 			#berend-mixin-button-reset;
