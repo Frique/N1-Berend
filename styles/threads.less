@@ -1,27 +1,6 @@
 @import "variables";
 @import "mixins";
 
-// Folder / labels
-.mail-label {
-	color: @berend-text-color-ui !important;
-	background: none !important;
-	border: 1px solid @berend-border-medium !important;
-	border-radius: @berend-border-radius;
-	box-shadow: none !important;
-	margin-right: 0;
-	margin-left: @berend-padding-label-spacing;
-	font-size: @berend-font-size-tiny;
-	transition: color @berend-transition-time, border-color @berend-transition-time;
-	padding: 0 6px;
-	order: 1; /* Behind subject in threads list, before print icon in message list */
-	-webkit-filter: none !important;
-	&.removable {}
-	img.content-mask {
-		background-color: @berend-medium-grey !important;
-		cursor: pointer;
-	}
-}
-
 .thread-list,
 .draft-list {
 
@@ -29,26 +8,17 @@
 	.list-item {
 
 		background: none !important;
-
-		// Focused
-		&.focused {
-			color: @berend-text-color-ui;
-			// From
-			.participants span,
-			// Subject
-			.details .subject {
-				font-weight: 600 !important;
-			}
-			// Labels
-			.mail-label {
-				box-shadow: none !important;
-			}
-		}
+		color: @berend-text-color-ui !important;
 
 		// Unread
 		&.unread {
-			color: @berend-text-color-dark;
+			color: @berend-text-color-dark !important;
 			background: white !important;
+
+			.participants span,
+			.subject {
+				font-weight: 600 !important;
+			}
 
 			// Date
 			.timestamp {
@@ -58,11 +28,43 @@
 
 		}
 
+		// Keyboard navigation active state
+		&.focused,
+		&.keyboard-cursor {
+
+			.list-column:first-child {
+				border-left-width: 5px !important;
+			}
+			&.unread .list-column:first-child {
+				border-left-color: @berend-blue !important;
+			}
+
+			height: 40px !important;
+			margin-top: -1px;
+			border-top: 1px solid @berend-border-medium;
+			.list-column {
+				border-bottom-color: @berend-border-medium !important;
+			}
+
+			.mail-label {
+				box-shadow: none !important;
+			}
+
+		}
+
 		// Each column
 		.list-column {
-			border-color: @berend-border-light !important;
-			border-left: 0 !important;
+
+			border-bottom-color: @berend-border-light !important;
+			//border-left: 0 !important;
 			padding: 0 @berend-padding-list-item-horizontal !important;
+
+			// First column is used to indicate the active state
+			&:first-child {
+				border-left: 0 solid @berend-border-medium !important;
+				transition: border-left-width @berend-transition-time;
+			}
+
 			&.list-column-Check,
 			&.list-column-Check .checkmark,
 			&.list-column-★,
@@ -81,6 +83,7 @@
 			&.list-column-Participants {
 				padding-left: 0 !important;
 			}
+
 		}
 
 		// Hover actions
@@ -162,10 +165,10 @@
 		.list-item {
 
 			.list-column {
-				padding: @berend-padding-list-item-horizontal @berend-padding-list-item-horizontal @berend-padding-list-item-vertical @berend-padding-list-item-vertical !important;
+				padding: ( @berend-padding-list-item-vertical + 1px ) @berend-padding-list-item-horizontal @berend-padding-list-item-vertical @berend-padding-list-item-vertical !important;
 			}
 			.thread-icon {
-				margin-top: -7px;
+				margin-top: -4px;
 				margin-left: -5px;
 			}
 			.mail-important-icon {
@@ -182,7 +185,6 @@
 			.subject,
 			.snippet {
 				font-size: @berend-font-size-medium;
-				font-weight: normal !important;
 				-webkit-font-smoothing: antialiased;
 			}
 			.snippet {
@@ -193,15 +195,10 @@
 				margin-right: 0;
 			}
 
-			// Focused
-			&.focused {
-				&:not(.unread) {
-					color: @berend-text-color-ui;
-				}
-				.participants span,
-				.subject {
-					font-weight: 600 !important;
-				}
+			// Selected / keyboard navigation active state
+			&.focused,
+			&.keyboard-cursor {
+				height: 91px !important;
 			}
 
 		}

@@ -1,5 +1,26 @@
 @import "variables";
 
+// Folder / labels
+.mail-label {
+	color: @berend-text-color-ui !important;
+	background: none !important;
+	border: 1px solid @berend-border-medium !important;
+	border-radius: @berend-border-radius;
+	box-shadow: none !important;
+	margin-right: 0;
+	margin-left: @berend-padding-label-spacing;
+	font-size: @berend-font-size-tiny;
+	transition: color @berend-transition-time, border-color @berend-transition-time;
+	padding: 0 6px;
+	order: 1; /* Behind subject in threads list, before print icon in message list */
+	-webkit-filter: none !important;
+	&.removable {}
+	img.content-mask {
+		background-color: @berend-medium-grey !important;
+		cursor: pointer;
+	}
+}
+
 // Popover (such as the label/folder picker)
 .popover {
 	input.search {
