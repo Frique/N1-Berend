@@ -1,6 +1,6 @@
 @import "variables";
 
-// Folder / labels
+// Folder / label tags
 .mail-label {
 	color: @berend-text-color-ui !important;
 	background: none !important;
@@ -27,6 +27,13 @@
 		background-position: 10px center !important;
 		background-size: 12px 12px !important;
 	}
+}
+
+// Tokens (such as a recipient item when composing)
+.tokenizing-field .token {
+	margin-bottom: 0 !important;
+	&.selected {}
+	&.dragging {}
 }
 
 // Dropdown (such as the reply/forward button)
