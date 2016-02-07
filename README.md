@@ -1,3 +1,5 @@
+Please switch back to the default theme until N1-Berend is made compatible with the new N1 0.4.4.
+
 ![Preview 1](preview1@2x.png)
 
 I was like "What? I can style a mac app with CSS? Yes, plz."
