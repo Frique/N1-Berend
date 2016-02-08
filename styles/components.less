@@ -64,3 +64,20 @@
 }
 // List
 .button-dropdown .secondary-items {}
+
+// Scrollbar
+.scrollbar-track {
+	border: 0;
+	background: none;
+	transition: opacity @berend-transition-time;
+	transition-delay: 0s;
+	width: @berend-scrollbar-width;
+	.scrollbar-handle {
+		border-color: @berend-scrollbar-color;
+		background: @berend-scrollbar-color;
+	}
+	&.dragging .scrollbar-handle {
+		border-color: @berend-scrollbar-active-color;
+		background: @berend-scrollbar-active-color;
+	}
+}

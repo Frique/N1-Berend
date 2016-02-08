@@ -40,168 +40,146 @@
 	}
 }
 
-// Applies to both the account switcher & the inbox list
-#account-switcher,
-#account-sidebar {
-	background: none;
-
-	// List items
-	.item {
-		font-size: @berend-font-size-medium;
-		line-height: @sidebar-icon-width;
-		color: @berend-text-color-medium;
-		transition: color @berend-transition-time, background-color @berend-transition-time;
-		&:hover,
-		&.selected {
-			color: @berend-text-color-dark;
-		}
-		&.selected {
-			background: none;
-			img.content-mask {
-				background-color: @berend-ui-grey;
-			}
-			//.name {
-			//	font-weight: 600;
-			//}
-		}
-		// Icon
-		img.content-mask {
-			background: @berend-light-grey;
-			transition: background-color @berend-transition-time;
-		}
-	}
-
+// Acount switching arrow
+.account-switcher {
+	top: @berend-padding-list-item-vertical;
+	right: @berend-padding-list-item-horizontal;
+	left: 0;
+	text-align: right;
 }
 
-// Account switcher
-#account-switcher {
-
-	border-color: @berend-border-light;
-
-	// Dropdown
-	.dropdown {
-		border: 0;
-		box-shadow: none;
-		background: none;
-		height: 100%;
-		margin-top: 0;
-		top: @sidebar-icon-width + ( @berend-padding-list-item-horizontal * 2 ) + 1px;
-	}
-
-	// List items
-	.item {
-		.gravatar {
-			top: auto;
-			border-radius: @berend-border-radius;
-		}
-		> div:first-child img {
-			margin-top: auto !important;
-			vertical-align: top;
-		}
-		// Account name
-		.name {
-			padding-left: @berend-padding-list-item-vertical;
-		}
-		&:hover {
-			background: white;
-		}
-		// Active account item
-		&.primary-item {
-			padding-top: @berend-padding-list-item-horizontal;
-			padding-bottom: @berend-padding-list-item-horizontal;
-			padding-left: @berend-padding-list-item-horizontal;
-			.name {
-				color: @berend-text-color-dark;
-			}
-		}
-		// Other account items
-		&.secondary-item {
-			padding-top: @berend-padding-list-item-vertical;
-			padding-right: @berend-padding-list-item-horizontal;
-			padding-bottom: @berend-padding-list-item-horizontal / 2;
-			padding-left: @berend-padding-list-item-horizontal;
-			+ .secondary-item {
-				padding-top: @berend-padding-list-item-horizontal / 2;
-			}
-		}
-	}
-
+// Acount switcher hover
+.account-sidebar-sections section:first-child .heading:hover,
+.account-switcher:hover + .account-sidebar-sections section:first-child .heading {
+	background: white;
+	color: @berend-text-color-dark;
 }
 
-// Inbox, folder list
-#account-sidebar {
-	transition: opacity @berend-transition-time;
-	.open + & {
-		opacity: 0;
-	}
-	// List section
-	.account-sidebar-sections {
-		padding-bottom: @berend-padding-small + @berend-button-height + @berend-padding-small - @berend-padding-list-item-vertical; // Extra space to prevent the Feedback button from overlapping folder names
-	}
+// Inbox, folder lists
+.account-sidebar-sections {
+	padding-bottom: @berend-padding-small + @berend-button-height + @berend-padding-small - @berend-padding-list-item-vertical; // Extra space to prevent the Feedback button from overlapping folder names
+
+	// Individual sections
 	section {
 		position: relative;
 		margin-bottom: @berend-padding-list-item-vertical;
-	}
-	// List heading
-	.heading {
-		font-size: @berend-font-size-medium;
-		font-weight: normal;
-		color: @berend-text-color-light;
-		letter-spacing: normal;
-		padding: @berend-padding-list-item-vertical @berend-padding-list-item-horizontal ( @berend-padding-list-item-vertical / 2 );
-		cursor: default;
-	}
-	.disclosure-triangle {
-		width: @berend-padding-list-item-horizontal;
-		padding-right: ( @berend-padding-list-item-horizontal - 6px ) / 2;
-		padding-left: ( @berend-padding-list-item-horizontal - 6px ) / 2;
-	}
-	.item .name {
-		padding-right: @berend-padding-list-item-horizontal;
-	}
-	// Counter
-	.item .item-count-box,
-	.add-item-button {
-		position: absolute;
-		right: @berend-padding-list-item-vertical;
-		background: none !important;
-		color: @berend-text-color-light;
-		font-size: 1em;
-		font-weight: normal;
-		box-shadow: none;
-		// Inbox unread count
-		&.inbox {
-			color: @berend-blue;
-			//&:before {
-			//	content: "+";
-			//}
-		}
-	}
-	.add-item-button {
-		top: @berend-padding-list-item-vertical;
-		img {
-			background-color: @berend-light-grey;
-			transition: background-color @berend-transition-time;
-		}
-		&:hover img {
-			background-color: @berend-ui-grey;
-		}
-	}
-}
 
-// Scrollbar
-.scrollbar-track {
-	border: 0;
-	background: none;
-	transition: opacity @berend-transition-time;
-	transition-delay: 0s;
-	width: @berend-scrollbar-width;
-	.scrollbar-handle {
-		border-color: @berend-scrollbar-color;
-		background: @berend-scrollbar-color;
+		// List heading
+		.heading {
+			font-size: @berend-font-size-medium;
+			font-weight: normal;
+			color: @berend-text-color-light;
+			letter-spacing: normal;
+			padding: @berend-padding-list-item-vertical @berend-padding-list-item-horizontal ( @berend-padding-list-item-vertical / 2 );
+			cursor: default;
+			// Show / Hide button
+			.collapse-button {
+				display: inline-block !important;
+				transition: opacity @berend-transition-time, color @berend-transition-time;
+				min-width: 36px;
+				text-align: right;
+				margin-right: 0;
+				opacity: 0;
+				&:hover {
+					color: @berend-text-color-dark;
+				}
+			}
+			&:hover .collapse-button {
+				opacity: 1;
+			}
+		}
+
+		// Account switcher
+		&:first-child .heading {
+			color: @berend-text-color-medium;
+			border-bottom: 1px solid @berend-border-medium;
+			padding-bottom: @berend-padding-list-item-vertical;
+			margin-bottom: @berend-padding-list-item-vertical - 5px;
+			transition: color @berend-transition-time, background-color @berend-transition-time;
+		}
+
+		// Item collapse arrow
+		.disclosure-triangle {
+			width: @berend-padding-list-item-horizontal;
+			padding-right: ( @berend-padding-list-item-horizontal - 6px ) / 2;
+			padding-left: ( @berend-padding-list-item-horizontal - 6px ) / 2;
+			padding-bottom: 0;
+		}
+
+		// Items
+		.item {
+			font-size: @berend-font-size-medium;
+			line-height: @sidebar-icon-width;
+			color: @berend-text-color-medium;
+			transition: color @berend-transition-time, background-color @berend-transition-time;
+			&:hover,
+			&.selected {
+				color: @berend-text-color-dark;
+			}
+			&.selected {
+				background: none;
+				img.content-mask {
+					background-color: @berend-ui-grey;
+				}
+			}
+			// Icon
+			img.content-mask {
+				background: @berend-light-grey;
+				transition: background-color @berend-transition-time;
+			}
+			.name {
+				padding-right: @berend-padding-list-item-horizontal;
+			}
+		}
+
+		// Sub items
+		@berend-sidebar-submenu-item-height: 24px;
+		.item-children {
+			padding-bottom: @berend-padding-list-item-vertical;
+			.disclosure-triangle {
+				padding-top: 5px;
+			}
+			.item {
+				line-height: @berend-sidebar-submenu-item-height;
+				.name {
+					padding-top: 0;
+					padding-bottom: 0;
+					line-height: @berend-sidebar-submenu-item-height;
+				}
+			}
+		}
+
+		// Counter & Add folder/label icon
+		.item .item-count-box,
+		.add-item-button {
+			position: absolute;
+			right: @berend-padding-list-item-vertical;
+			background: none !important;
+			color: @berend-text-color-light;
+			font-size: 1em;
+			font-weight: normal;
+			box-shadow: none;
+			// Inbox unread count
+			&.inbox {
+				color: @berend-blue;
+				//&:before {
+				//	content: "+";
+				//}
+			}
+		}
+
+		// Add folder/label icon
+		.add-item-button {
+			position: static;
+			img {
+				background-color: @berend-light-grey;
+				transition: background-color @berend-transition-time;
+			}
+			&:hover img {
+				background-color: @berend-ui-grey;
+			}
+		}
+
 	}
-	&.dragging .scrollbar-handle {
-		border-color: @berend-scrollbar-active-color;
-		background: @berend-scrollbar-active-color;
-	}
+
 }
