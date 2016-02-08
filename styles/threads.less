@@ -71,7 +71,9 @@
 			&.list-column-Name, // Participants in case of drafts
 			&.list-column-Participants,
 			&.list-column-Message,
-			&.list-column-Date {
+			&.list-column-Contents, // Subject & snippet in case of drafts
+			&.list-column-Date,
+			&.list-column-State { // Date in case of drafts
 				display: flex;
 				* {
 					margin-top: auto;
@@ -81,7 +83,7 @@
 			&.list-column-Check {
 				padding-right: 0 !important;
 			}
-			&.list-column-Participants {
+			&.list-column-★ + .list-column-Participants {
 				padding-left: 0 !important;
 			}
 			&.list-column-Date {
