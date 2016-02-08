@@ -111,12 +111,49 @@
 	}
 }
 
-// Send button
-.btn.btn-emphasis {
+// Send button regular
+.btn-emphasis {
 	#berend-mixin-button-green;
 	width: 20%;
 	padding-left: @berend-text-button-padding - 5px !important;
 	margin: 0 !important;
+}
+// Send button dropdown
+.btn-send {
+	#berend-mixin-button-reset;
+	#berend-mixin-button-green;
+	width: 20%;
+	padding-left: @berend-text-button-padding - 5px !important;
+	margin: 0 !important;
+
+	// Left side
+	.primary-item {
+		border: 0 !important;
+		padding: 0 !important;
+		line-height: inherit !important;
+		background: none !important;
+		cursor: pointer !important;
+	}
+
+	// Arrow
+	.secondary-picker {
+		float: right;
+		right: -@berend-text-button-padding;
+		height: @berend-button-height !important;
+		border: 0 !important;
+		border-left: 1px solid rgba( 255, 255, 255, 0.25 ) !important;
+		background: none !important;
+		padding: 12px @berend-padding-small 0 @berend-padding-small !important;
+	}
+
+	// Icon
+	img.content-mask {
+		transition: opacity @berend-transition-time !important;
+	}
+	> *:hover img.content-mask {
+		background: white !important;
+	}
+
 }
 
 // Message print icon
