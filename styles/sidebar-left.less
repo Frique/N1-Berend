@@ -41,8 +41,9 @@
 }
 
 // Acount switching arrow
+@berend-account-switcher-vertical-padding: @berend-padding-list-item-vertical + 1px;
 .account-switcher {
-	top: @berend-padding-list-item-vertical;
+	top: @berend-account-switcher-vertical-padding;
 	right: @berend-padding-list-item-horizontal;
 	left: 0;
 	text-align: right;
@@ -93,49 +94,62 @@
 		&:first-child .heading {
 			color: @berend-text-color-medium;
 			border-bottom: 1px solid @berend-border-medium;
-			padding-bottom: @berend-padding-list-item-vertical;
-			margin-bottom: @berend-padding-list-item-vertical - 5px;
+			padding-top: @berend-account-switcher-vertical-padding;
+			padding-bottom: @berend-account-switcher-vertical-padding;
+			margin-bottom: @berend-padding-list-item-vertical - 3px;
 			transition: color @berend-transition-time, background-color @berend-transition-time;
-		}
-
-		// Item collapse arrow
-		.disclosure-triangle {
-			width: @berend-padding-list-item-horizontal;
-			padding-right: ( @berend-padding-list-item-horizontal - 6px ) / 2;
-			padding-left: ( @berend-padding-list-item-horizontal - 6px ) / 2;
-			padding-bottom: 0;
 		}
 
 		// Items
-		.item {
-			font-size: @berend-font-size-medium;
-			line-height: @sidebar-icon-width;
-			color: @berend-text-color-medium;
-			transition: color @berend-transition-time, background-color @berend-transition-time;
-			&:hover,
-			&.selected {
-				color: @berend-text-color-dark;
-			}
-			&.selected {
-				background: none;
-				img.content-mask {
-					background-color: @berend-ui-grey;
+		.item-container {
+
+			// Item collapse arrow
+			.disclosure-triangle {
+				width: @berend-padding-list-item-horizontal;
+				padding-right: ( @berend-padding-list-item-horizontal - 6px ) / 2;
+				padding-left: ( @berend-padding-list-item-horizontal - 6px ) / 2;
+				padding-bottom: 0;
+				transition: opacity @berend-transition-time;
+				&.visible {
+					opacity: 0;
 				}
 			}
-			// Icon
-			img.content-mask {
-				background: @berend-light-grey;
-				transition: background-color @berend-transition-time;
+			&:hover .disclosure-triangle {
+				opacity: 1;
 			}
-			.name {
-				padding-right: @berend-padding-list-item-horizontal;
+
+			.item {
+				font-size: @berend-font-size-medium;
+				line-height: @sidebar-icon-width;
+				color: @berend-text-color-medium;
+				transition: color @berend-transition-time, background-color @berend-transition-time;
+				&:hover,
+				&.selected {
+					color: @berend-text-color-dark;
+				}
+				&.selected {
+					background: none;
+					img.content-mask {
+						background-color: @berend-ui-grey;
+					}
+				}
+				// Icon
+				img.content-mask {
+					background: @berend-light-grey;
+					transition: background-color @berend-transition-time;
+				}
+				.name {
+					padding-right: @berend-padding-list-item-horizontal;
+				}
 			}
+
 		}
 
 		// Sub items
 		@berend-sidebar-submenu-item-height: 24px;
 		.item-children {
-			padding-bottom: @berend-padding-list-item-vertical;
+			padding-top: 3px;
+			padding-bottom: 5px;
 			.disclosure-triangle {
 				padding-top: 5px;
 			}
