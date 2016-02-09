@@ -37,33 +37,50 @@
 }
 
 // Dropdown (such as the reply/forward button)
-.button-dropdown.bordered > * {
-	img.content-mask {
-		transition: background-color @berend-transition-time;
+.button-dropdown {
+
+	// Arrow
+	.secondary-picker {
+		border-radius: 0 @berend-border-radius @berend-border-radius 0;
+		background: none;
+		box-shadow: none !important;
+		border: 1px solid @berend-border-medium;
+		border-left: 0;
 	}
-	&:hover img.content-mask {
-		background-color: @berend-dark-grey;
+	// List
+	.secondary-items {}
+
+	// Bordered
+	&.bordered {
+		> * {
+			img.content-mask {
+				transition: background-color @berend-transition-time;
+			}
+			&:hover img.content-mask {
+				background-color: @berend-dark-grey;
+			}
+		}
+		// Left button
+		.primary-item,
+		.only-item {
+			border-radius: @berend-border-radius 0 0 @berend-border-radius;
+			box-shadow: none !important;
+			border: 1px solid @berend-border-medium;
+			padding: 0 @berend-padding-small;
+			line-height: 30px;
+		}
+	}
+
+}
+// Dropdown in compose > Send From
+.composer-participant-field .button-dropdown {
+	display: flex;
+	.primary-item,
+	.only-item {
+		margin-top: auto;
+		margin-bottom: auto;
 	}
 }
-// Left button
-.button-dropdown.bordered .primary-item,
-.button-dropdown.bordered .only-item {
-	border-radius: @berend-border-radius 0 0 @berend-border-radius;
-	box-shadow: none !important;
-	border: 1px solid @berend-border-medium;
-	padding: 0 @berend-padding-small;
-	line-height: 30px;
-}
-// Arrow
-.button-dropdown .secondary-picker {
-	border-radius: 0 @berend-border-radius @berend-border-radius 0;
-	background: none;
-	box-shadow: none !important;
-	border: 1px solid @berend-border-medium;
-	border-left: 0;
-}
-// List
-.button-dropdown .secondary-items {}
 
 // Scrollbar
 .scrollbar-track {
