@@ -1,9 +1,7 @@
 ![Preview 1](preview1@2x.png)
 
-I was like "What? I can style a mac app with CSS? Yes, plz."
-So here's version 1.0 as the result of a double weekend project.
-
 This theme has been tested on OSX 10.10.5, in N1 version 0.4.5.
+Note that the screenshot is of version 1.0.
 
 ### Instructions
 - [Install N1](https://www.nylas.com/n1)
