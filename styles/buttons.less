@@ -48,9 +48,15 @@
 .message-toolbar-arrow {
 	padding-top: 0 !important;
 	display: flex;
+	cursor: pointer;
 	img {
+		background-color: @berend-medium-grey !important;
 		transition: background-color @berend-transition-time;
 		margin: auto;
+		cursor: pointer;
+	}
+	&:hover img {
+		background-color: @berend-dark-grey !important;
 	}
 	&.down {
 		margin-left: @berend-padding-small;
@@ -59,15 +65,16 @@
 		margin-right: @berend-padding-small;
 	}
 	&.disabled {
+		cursor: default;
 		img {
-			background-color: @berend-medium-grey;
+			background-color: @berend-medium-grey !important;
+			cursor: default;
 		}
 		&:hover img {
-			background-color: @berend-medium-grey;
+			background-color: @berend-medium-grey !important;
 		}
 	}
 	body.platform-win32 &:hover {
-		cursor: pointer;
 		background: none !important;
 	}
 }
