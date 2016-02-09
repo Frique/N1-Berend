@@ -1,17 +1,16 @@
-Please switch back to the default theme until N1-Berend is made compatible with the new N1 0.4.4.
-
 ![Preview 1](preview1@2x.png)
 
 I was like "What? I can style a mac app with CSS? Yes, plz."
 So here's version 1.0 as the result of a double weekend project.
 
-This theme has been tested on OSX 10.10.5, in N1 version 0.3.45.
+This theme has been tested on OSX 10.10.5, in N1 version 0.4.5.
 
 ### Instructions
 - [Install N1](https://www.nylas.com/n1)
 - [Download the theme](https://github.com/Frique/N1-Berend/releases)
 - Visit the N1 settings
 - Open the "Select theme" dropdown, select "Install a theme" and point to the downloaded folder
+- It is advised to restart N1 to avoid visual glitches after switching theme
 
 ### Issues
 - Check back here if your issue has been fixed in the newest version
@@ -21,9 +20,8 @@ This theme has been tested on OSX 10.10.5, in N1 version 0.3.45.
 - Test on Windows
 - Test on Linux
 - Responsive tweaks: Narrower sidebar width
-- Styling changes when window is not focused
-- Account list item hover style
-- Translatable button captions?
+- ~~Styling changes when window is not focused~~
+- ~~Account list item hover style~~
 - RTL support
 - Style popovers
 - Style dropdowns
@@ -33,3 +31,4 @@ This theme has been tested on OSX 10.10.5, in N1 version 0.3.45.
 - ~~Fix styling of combined collapsed messages in a long thread~~
 - ~~Fix height of text format tooltip~~
 - ~~Fix focused thread highlighting during keyboard navigation~~
+- ~~N1 0.4.4 compatibility~~
