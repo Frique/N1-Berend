@@ -30,3 +30,4 @@ Note that the screenshot is of version 1.0.
 - ~~Fix height of text format tooltip~~
 - ~~Fix focused thread highlighting during keyboard navigation~~
 - ~~N1 0.4.4 compatibility~~
+- Fix the unified inbox sidebar sub-items not showing numbers
