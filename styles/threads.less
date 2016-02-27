@@ -2,7 +2,7 @@
 @import "mixins";
 
 @n1-default-thread-height-small: 36px;
-@n1-default-thread-height-large: 90px;
+@n1-default-thread-height-large: 85px;
 
 .thread-list,
 .draft-list {
@@ -51,6 +51,7 @@
 
 			.mail-label {
 				box-shadow: none !important;
+				background: none !important;
 			}
 
 		}
@@ -173,7 +174,7 @@
 		.list-item {
 
 			.list-column {
-				padding: ( @berend-padding-list-item-vertical + 1px ) @berend-padding-list-item-horizontal @berend-padding-list-item-vertical @berend-padding-list-item-vertical !important;
+				padding: ( @berend-padding-list-item-vertical + 1px ) @berend-padding-list-item-vertical @berend-padding-list-item-vertical @berend-padding-list-item-vertical !important;
 			}
 			.thread-icon {
 				margin-top: -4px;
@@ -182,6 +183,11 @@
 			.mail-important-icon {
 				margin-top: -2px;
 				margin-left: -3px;
+			}
+			.snippet-and-labels {
+				margin-left: 0;
+				margin-right: 0;
+				align-items: center;
 			}
 			.subject,
 			.snippet {
@@ -200,7 +206,7 @@
 				color: @berend-text-color-light !important;
 			}
 			.timestamp {
-				margin-right: 0;
+				margin-right: @berend-padding-list-item-horizontal - @berend-padding-list-item-vertical;
 			}
 
 			// Selected / keyboard navigation active state
