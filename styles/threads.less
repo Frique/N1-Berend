@@ -1,6 +1,9 @@
 @import "variables";
 @import "mixins";
 
+@n1-default-thread-height-small: 36px;
+@n1-default-thread-height-large: 90px;
+
 .thread-list,
 .draft-list {
 
@@ -10,6 +13,7 @@
 		background: none !important;
 		color: @berend-text-color-ui !important;
 		border-left: 0 !important;
+		border-color: @berend-border-light !important;
 
 		// Unread
 		&.unread {
@@ -40,12 +44,10 @@
 				border-left-color: @berend-blue !important;
 			}
 
-			height: 40px !important;
+			height: @n1-default-thread-height-small + 1px !important;
 			margin-top: -1px;
-			border-top: 1px solid @berend-border-medium;
-			.list-column {
-				border-bottom-color: @berend-border-medium !important;
-			}
+			border-top: 1px solid;
+			border-color: @berend-border-medium !important;
 
 			.mail-label {
 				box-shadow: none !important;
@@ -56,8 +58,6 @@
 		// Each column
 		.list-column {
 
-			border-bottom-color: @berend-border-light !important;
-			//border-left: 0 !important;
 			padding: 0 @berend-padding-list-item-horizontal !important;
 
 			// First column is used to indicate the active state
@@ -206,7 +206,7 @@
 			// Selected / keyboard navigation active state
 			&.focused,
 			&.keyboard-cursor {
-				height: 91px !important;
+				height: @n1-default-thread-height-large + 1px !important;
 			}
 
 		}
