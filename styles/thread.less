@@ -118,11 +118,26 @@
 				color: @berend-text-color-dark !important;
 			}
 			// To:
-			.participant-type {
-				margin-top: 0;
+			.participant-label {
+				margin-right: 0;
 			}
 			.message-participants * {
 				color: @berend-text-color-medium;
+				vertical-align: top;
+			}
+			.to-participants {
+				clear: both;
+				top: -6px;
+				margin-bottom: -6px;
+				.collapsed-participants {
+					margin-top: 0;
+					margin-bottom: 0;
+				}
+			}
+			// Folder
+			.header-row {
+				color: @berend-text-color-medium;
+				margin-top: 0;
 			}
 		}
 
