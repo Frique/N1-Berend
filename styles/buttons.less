@@ -141,17 +141,21 @@
 		line-height: inherit !important;
 		background: none !important;
 		cursor: pointer !important;
+		> span {
+			vertical-align: middle;
+		}
 	}
 
 	// Arrow
 	.secondary-picker {
+		line-height: @berend-button-height;
 		float: right;
 		right: -@berend-text-button-padding;
 		height: @berend-button-height !important;
 		border: 0 !important;
 		border-left: 1px solid rgba( 255, 255, 255, 0.25 ) !important;
 		background: none !important;
-		padding: 12px @berend-padding-small 0 @berend-padding-small !important;
+		padding: 0 @berend-padding-small !important;
 	}
 
 	// Icon

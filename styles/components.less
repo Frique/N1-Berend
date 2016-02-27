@@ -21,8 +21,11 @@
 	}
 }
 
-// Popover (such as the label/folder picker)
+// Popover (such as the label/folder picker, snooze picker)
 .popover {
+	input[type="text"] {
+		background: white;
+	}
 	input.search {
 		background-position: 10px center !important;
 		background-size: 12px 12px !important;
@@ -36,7 +39,7 @@
 	&.dragging {}
 }
 
-// Dropdown (such as the reply/forward button)
+// Dropdown (such as the reply/forward button, reply send button)
 .button-dropdown {
 
 	// Arrow
@@ -46,11 +49,12 @@
 		box-shadow: none !important;
 		border: 1px solid @berend-border-medium;
 		border-left: 0;
+		font-size: @berend-font-size-medium;
 	}
 	// List
 	.secondary-items {}
 
-	// Bordered
+	// Bordered (quick reply dropdown)
 	&.bordered {
 		> * {
 			img.content-mask {
@@ -63,11 +67,14 @@
 		// Left button
 		.primary-item,
 		.only-item {
+			background: none;
 			border-radius: @berend-border-radius 0 0 @berend-border-radius;
 			box-shadow: none !important;
 			border: 1px solid @berend-border-medium;
-			padding: 0 @berend-padding-small;
-			line-height: 30px;
+			// padding: 0 @berend-padding-small;
+			// line-height: 30px;
+			font-size: @berend-font-size-medium;
+			vertical-align: top;
 		}
 	}
 
