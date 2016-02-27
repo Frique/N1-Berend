@@ -137,9 +137,11 @@
 				img.content-mask {
 					background: @berend-light-grey;
 					transition: background-color @berend-transition-time;
+					vertical-align: middle;
 				}
 				.name {
 					padding-right: @berend-padding-list-item-horizontal;
+					flex: 1; /* Push item counts to the right */
 				}
 			}
 
@@ -166,13 +168,13 @@
 		// Counter & Add folder/label icon
 		.item .item-count-box,
 		.add-item-button {
-			position: absolute;
 			right: @berend-padding-list-item-vertical;
 			background: none !important;
 			color: @berend-text-color-light;
 			font-size: 1em;
 			font-weight: normal;
 			box-shadow: none;
+			padding: 0;
 			// Inbox unread count
 			&.inbox {
 				color: @berend-blue;
