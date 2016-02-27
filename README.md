@@ -1,7 +1,7 @@
 ![Preview 1](preview1@2x.png)
 
-This theme has been tested on OSX 10.10.5, in N1 version 0.4.5.
-Note that the screenshot is of version 1.0.
+This theme has been tested on OSX 10.10.5, in N1 version 0.4.10.
+Note that the screenshot is of theme version 1.0.
 
 ### Instructions
 - [Install N1](https://www.nylas.com/n1)
