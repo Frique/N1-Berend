@@ -81,16 +81,11 @@
 
 	// Bottom action bar (in thread + full compose window)
 	.composer-action-bar-wrap {
+		box-shadow: none;
+		background: @berend-bottom-toolbar-color !important;
 		.composer-action-bar-content {
 			max-width: @berend-compose-max-width;
 			padding: @berend-padding-small;
-		}
-	}
-	// Bottom action bar (in full compose window)
-	.composer-full-window & {
-		.composer-action-bar-wrap {
-			background: @berend-bottom-toolbar-color;
-			box-shadow: none;
 		}
 	}
 
