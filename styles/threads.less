@@ -40,6 +40,7 @@
 
 		// Keyboard navigation active state
 		&.focused,
+		&.selected,
 		&.keyboard-cursor {
 
 			.list-column:first-child {
@@ -155,7 +156,10 @@
 			}
 		}
 
-		// Unread icon
+		// Change unread icon to star icon
+		&:hover .thread-icon-unread:not(:hover) {
+			background-image: url( '../static/images/thread-list/icon-star-hover-@2x.png' );
+		}
 		.thread-icon-unread:not(:hover) {
 			background-image: none;
 		}
@@ -216,6 +220,7 @@
 
 			// Selected / keyboard navigation active state
 			&.focused,
+			&.selected,
 			&.keyboard-cursor {
 				height: @n1-default-thread-height-large + 1px !important;
 			}
