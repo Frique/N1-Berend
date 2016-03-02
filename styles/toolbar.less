@@ -5,7 +5,7 @@
 // Toolbar container
 .sheet-toolbar-container {
 	background-image: none;
-	background-color: @berend-toolbar-color;
+	background-color: @berend-toolbar-color !important; // Also apply to body.platform-win32 &
 	box-shadow: none;
 	> div {
 		height: 100%;
@@ -144,6 +144,10 @@
 // Toolbar menu button on Windows
 .toolbar-menu-control {
 	margin-right: @berend-padding-small;
+	// On single pane mode
+	.search-bar ~ & {
+		margin-left: @berend-padding-small;
+	}
 }
 body.platform-win32.window-type-default .toolbar-menu-control img.content-mask {
 	top: auto;
