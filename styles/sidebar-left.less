@@ -67,27 +67,29 @@
 
 		// List heading
 		.heading {
+			position: relative;
 			font-size: @berend-font-size-medium;
 			font-weight: normal;
 			color: @berend-text-color-light;
 			letter-spacing: normal;
 			padding: @berend-padding-list-item-vertical @berend-padding-list-item-horizontal ( @berend-padding-list-item-vertical / 2 );
 			cursor: default;
+			transition: color @berend-transition-time;
+
 			// Show / Hide button
 			.collapse-button {
-				display: inline-block !important;
-				transition: opacity @berend-transition-time, color @berend-transition-time;
-				min-width: 36px;
-				text-align: right;
-				margin-right: 0;
 				opacity: 0;
-				&:hover {
-					color: @berend-text-color-dark;
-				}
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				left: 0;
+				top: 0;
 			}
-			&:hover .collapse-button {
-				opacity: 1;
-			}
+
+		}
+
+		&:hover .heading {
+			color: @berend-text-color-dark;
 		}
 
 		// Account switcher
@@ -165,7 +167,7 @@
 			}
 		}
 
-		// Counter & Add folder/label icon
+		// Counter & Add folder/label icon (plus)
 		.item .item-count-box,
 		.add-item-button {
 			right: @berend-padding-list-item-vertical;
@@ -175,6 +177,7 @@
 			font-weight: normal;
 			box-shadow: none;
 			padding: 0;
+			z-index: 1; // Above show/hide area
 			// Inbox unread count
 			&.inbox {
 				color: @berend-blue;
