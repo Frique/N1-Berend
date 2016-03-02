@@ -95,8 +95,9 @@
 	&:before {
 		content: "Compose";
 	}
-	// On Windows
-	body.platform-win32 & {
+	// On Windows, Linux
+	body.platform-win32 &,
+	body.platform-linux & {
 		width: ~"calc( 100% - " ( @berend-padding-small * 2 ) ~" )";
 		margin-right: @berend-padding-small !important;
 		margin-left: @berend-padding-small !important;
