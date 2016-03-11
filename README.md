@@ -6,8 +6,7 @@ Note that the screenshot is of theme version 1.0.
 ### Instructions
 - [Install N1](https://www.nylas.com/n1)
 - [Download the theme](https://github.com/Frique/N1-Berend/releases)
-- Visit the N1 settings
-- Open the "Select theme" dropdown, select "Install a theme" and point to the downloaded folder
+- Select "Install Theme..." from the menus and point to the downloaded folder
 - It is advised to restart N1 to avoid visual glitches after switching theme
 
 ### Issues
