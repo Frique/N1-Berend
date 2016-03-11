@@ -24,6 +24,7 @@
 }
 .sidebar-activity {
 	box-shadow: none;
+	font-size: @berend-font-size-medium;
 	text-align: center;
 	background: @berend-bottom-toolbar-color;
 	.item {
@@ -36,6 +37,14 @@
 			padding: @berend-padding-small ( @berend-padding-list-item-vertical / 2 ) 0 !important;
 			line-height: @berend-button-height;
 			vertical-align: bottom;
+			&.progress-track {
+				padding: 0 !important;
+				height: 0;
+				.progress {
+					height: 2px;
+					background-color: @berend-blue;
+				}
+			}
 		}
 	}
 }
