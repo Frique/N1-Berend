@@ -7,9 +7,67 @@
 	border-color: @berend-border-light;
 	margin-left: -1px; // To cover up a message's right border when they touch
 
+	// Sidebar contact dropdown
+	.sidebar-participant-picker {
+		padding: @berend-padding-small;
+		select {
+			width: 100%;
+		}
+	}
+
 	.sidebar-section {
 
+		border: 0;
+		margin: 0;
 		padding: @berend-padding-medium;
+		background: none;
+
+		// Participant profile
+		.sidebar-contact-card {
+			.participant-profile {
+				margin-top: -@berend-padding-small;
+				// Avatar
+				.profile-photo-wrap {
+					position: static;
+					margin: 0 auto;
+					background: white;
+				}
+				// Name, email
+				.core-personal-info {
+					padding-top: @berend-padding-small;
+					.full-name {
+						font-size: @berend-font-size-large;
+						color: @berend-text-color-dark;
+					}
+					.email {
+						font-size: @berend-font-size-small;
+						color: @berend-text-color-light;
+						margin-bottom: @berend-padding-small;
+					}
+				}
+			}
+			// Related threads
+			.related-threads {
+				width: ~"calc( 100% + " ( @berend-padding-medium * 2 ) ~" )";
+				left: -@berend-padding-medium;
+				border-top: 0;
+				background: none;
+				.related-thread {
+					color: @berend-text-color-medium;
+					border-color: @berend-border-light;
+					cursor: pointer;
+					&:hover {
+						background: white;
+					}
+				}
+				.toggle {
+					border-color: @berend-border-light;
+					cursor: pointer;
+				}
+			}
+		}
+
+		// Older versions:
 
 		// Top contact card
 		.contact-card-fullcontact {
