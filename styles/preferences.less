@@ -1,0 +1,140 @@
+@import "variables";
+@import "mixins";
+
+// Preferences
+
+.preferences-wrap {
+
+	input {
+		padding-left: @berend-padding-small !important;
+	}
+
+	// Category tabs
+	.container-preference-tabs .preferences-tabs {
+
+		// Tab
+		.item {
+			opacity: 0.6;
+			transition: opacity @berend-transition-time;
+			cursor: pointer;
+			&:hover,
+			&:active,
+			&:focus {
+				opacity: 1;
+			}
+			&.active {
+				box-shadow: none;
+				background: none;
+				opacity: 1;
+			}
+		}
+
+	}
+
+	// Content area
+	.preferences-content > .scroll-region-content {
+		padding: @berend-padding-medium;
+	}
+
+	// Notes (such as under mail rules)
+	.platform-note {
+		max-width: none !important;
+		border: 1px solid @berend-border-lightest;
+		background: white;
+		padding: @berend-padding-small ( @berend-padding-small + 5px );
+		margin: @berend-padding-medium 0;
+		font-size: @berend-font-size-medium;
+		&:before {
+			color: @berend-text-color-dark;
+		}
+	}
+
+	// Accounts
+	.container-accounts {
+		width: auto;
+		// Both columns
+		.accounts-content .account-list,
+		.accounts-content .account-details {
+			width: 50%;
+		}
+		// Account list
+		.accounts-content .account-list .items-wrapper {
+			height: auto;
+			background: none;
+			border-bottom: 0;
+			.list-item.selected {
+				background: white;
+				color: @berend-text-color-dark;
+			}
+			.account-name {
+				font-size: @berend-font-size-medium;
+				font-weight: bold;
+				line-height: 1;
+			}
+			.scroll-region-content {
+				position: relative;
+			}
+		}
+		// Account details
+		.accounts-content .account-details {
+			background: none;
+			border: 1px solid @berend-border-light;
+			margin-left: -1px;
+			padding: @berend-padding-medium;
+			> input {
+				font-size: 1em !important;
+			}
+		}
+	}
+
+	// Shortcuts
+	.container-keymaps {
+		width: auto;
+	}
+
+	// Mail rules
+	.container-mail-rules {
+		max-width: none;
+	}
+
+	// Signatures
+	.container-signatures {
+		max-width: none;
+	}
+
+	// Quick replies
+	.container-templates {
+		max-width: none;
+		.template-name-btn {
+			margin-right: 0;
+		}
+		.templates-instructions * {
+			font-size: @berend-font-size-small;
+			color: @berend-text-color-ui;
+		}
+	}
+
+	// Plugins
+	.plugins-view,
+	.plugins-view .inner {
+		max-width: none;
+	}
+	.package-set {
+		h6 {
+			color: @berend-text-color-ui;
+			font-size: @berend-font-size-medium;
+		}
+		.package {
+			border-radius: 0;
+			padding: @berend-padding-small;
+			margin: 0 0 -1px;
+		}
+		h6 + .package {
+			border-radius: @berend-border-radius @berend-border-radius 0 0;
+		}
+		.package:last-child {
+			border-radius: 0 0 @berend-border-radius @berend-border-radius;
+		}
+	}
+
+}
