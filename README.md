@@ -1,6 +1,6 @@
 ![Preview 1](preview1@2x.png)
 
-This theme has been tested on OSX 10.11.4, in N1 version 0.4.19.
+This theme has been tested on OSX 10.11.4, in N1 version 0.4.25.
 Note that the screenshot is of theme version 1.0.
 
 ### Instructions
