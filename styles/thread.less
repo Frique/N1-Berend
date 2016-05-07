@@ -148,8 +148,11 @@
 			.composer-outer-wrap {
 				box-shadow: none !important;
 			}
-			.composer-inner-wrap {
+			.composer-outer-wrap > .composer-inner-wrap {
 				min-height: ~"calc( 100vh - " ( @berend-padding-medium * 2 ) ~" - " @berend-toolbar-height ~" )";
+				>  .composer-inner-wrap {
+					flex: 1; // Make the bottom toolbar parent stretch 100% high so the bottom toolbar can stick to the bottom
+				}
 			}
 			.quoted-text-control {
 				margin-left: 0;
