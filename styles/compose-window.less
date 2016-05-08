@@ -27,6 +27,9 @@
 			&:after {
 				#berend-clearfix;
 			}
+			&.to-field > div {
+				width: 100%; // Fix to-field being narrow
+			}
 		}
 		// Label
 		.tokenizing-field .tokenizing-field-label, // "To" label
@@ -47,6 +50,14 @@
 		.tokenizing-field .token {
 			margin-top: auto;
 			margin-bottom: auto !important;
+		}
+		// Dropped down list of address suggestions
+		.content-container {
+			width: auto;
+			.item {
+				padding-right: @berend-padding-small;
+				padding-left: @berend-padding-small;
+			}
 		}
 		// Bcc Cc
 		.composer-participant-actions {
