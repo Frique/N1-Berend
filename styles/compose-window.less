@@ -4,6 +4,10 @@
 .composer-inner-wrap {
 	background: white;
 
+	.composer-header-actions {
+		padding-right: 0;
+	}
+
 	// Compose content
 	.composer-centered {
 		max-width: @berend-compose-max-width;
@@ -25,21 +29,24 @@
 			}
 		}
 		// Label
-		.composer-field-label, // "From" label
-		.tokenizing-field .tokenizing-field-label {
+		.tokenizing-field .tokenizing-field-label, // "To" label
+		.composer-field-label { // "From" label
 			padding: 0;
 			line-height: @berend-input-height;
 			color: @berend-placeholder-color;
-		}
-		// "From" selection
-		.from-picker {
-			top: 0 !important;
-			margin-top: auto;
-			margin-bottom: auto;
+			min-width: 4em;
 		}
 		// Input
-		.tokenizing-field .tokenizing-field-input input {
+		.tokenizing-field .tokenizing-field-input, // To
+		.composer-participant-field .button-dropdown { // From
+			padding: 0;
 			margin: 0;
+			display: flex;
+		}
+		// Address dropdowns
+		.tokenizing-field .token {
+			margin-top: auto;
+			margin-bottom: auto !important;
 		}
 		// Bcc Cc
 		.composer-participant-actions {
