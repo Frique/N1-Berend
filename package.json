@@ -2,7 +2,7 @@
 	"name": "N1-Berend",
 	"displayName": "Berend",
 	"theme": "ui",
-	"version": "1.3.6",
+	"version": "1.3.7",
 	"description": "A theme for the open source email client Nylas N1",
 	"license": "MIT",
 	"author": "Berend de Jong <please@frique.me>",
