@@ -1,6 +1,6 @@
 ![Preview 1](preview1@2x.png)
 
-This theme has been tested on OSX 10.11.4, in N1 version 0.4.33.
+This theme has been tested on OSX 10.11.4, in N1 version 0.4.37.
 Note that the screenshot is of theme version 1.0.
 
 ### Instructions
@@ -17,16 +17,8 @@ Note that the screenshot is of theme version 1.0.
 - Test on Windows
 - Test on Linux
 - Responsive tweaks: Narrower sidebar width
-- ~~Styling changes when window is not focused~~
-- ~~Account list item hover style~~
 - RTL support
 - Style popovers
 - Style dropdowns
 - Better utilization of the global variables
 - Better thread list padding when the core allows styling it with CSS
-- ~~Add padding to the bottom of the sidebar to accommodate for the feedback button~~
-- ~~Fix styling of combined collapsed messages in a long thread~~
-- ~~Fix height of text format tooltip~~
-- ~~Fix focused thread highlighting during keyboard navigation~~
-- ~~N1 0.4.4 compatibility~~
-- ~~Fix the unified inbox sidebar sub-items not showing numbers~~
