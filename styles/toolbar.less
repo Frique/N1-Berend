@@ -20,6 +20,9 @@
 		height: @berend-input-height;
 	}
 }
+.toolbar-RootSidebar {
+	z-index: 1; // To have the activity icon on Windows be clickable
+}
 
 // Slide-down toolbar with action icons
 .sheet-toolbar .selection-bar .absolute {
@@ -88,9 +91,21 @@
 .toolbar-activity {
 	display: flex;
 	margin-right: @berend-padding-small;
+	cursor: pointer;
 	> * {
 		margin-top: auto !important;
 		margin-bottom: auto;
+	}
+	.unread-count {
+		display: none !important;
+	}
+	// On Windows, Linux
+	body.platform-win32 .layout-mode-list &,
+	body.platform-linux .layout-mode-list & {
+		position: fixed;
+		top: 0;
+		right: @berend-toolbar-activity-icon-width + @berend-padding-small; //todo
+		height: @berend-toolbar-height;
 	}
 }
 
@@ -134,10 +149,11 @@
 		padding-left: 34px !important;
 	}
 
-	// On Windows
-	body.platform-win32 & {
+	// On Windows, Linux
+	body.platform-win32 &,
+	body.platform-linux & {
 		margin-left: -1px;
-		margin-right: 0;
+		margin-right: @berend-toolbar-activity-icon-width; // Make room for the activity icon
 	}
 
 	// Search results

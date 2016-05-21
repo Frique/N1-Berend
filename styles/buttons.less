@@ -103,6 +103,10 @@
 		margin-right: @berend-padding-small !important;
 		margin-left: @berend-padding-small !important;
 	}
+	body.platform-win32 .layout-mode-split &,
+	body.platform-linux .layout-mode-split & {
+		width: ~"calc( 100% - " ( @berend-padding-small * 2 ) + @berend-toolbar-activity-icon-width ~" )";
+	}
 }
 
 // Feedback button
