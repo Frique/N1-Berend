@@ -14,7 +14,7 @@ _Note that the screenshot is of theme version 1.0 and the dark overlay on the ba
 - Open a github issue
 
 ### Todo
-- Test on Windows
+- ~~Test on Windows~~
 - Test on Linux
 - Responsive tweaks: Narrower sidebar width
 - RTL support
