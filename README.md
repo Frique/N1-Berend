@@ -1,3 +1,5 @@
+Currently no longer maintained!
+
 ![Preview 1](preview1@2x.png)
 
 This theme has been tested on OSX 10.11.5, in N1 version 0.4.45.  
