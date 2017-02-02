@@ -1,4 +1,4 @@
-Currently no longer maintained!
+Currently no longer maintained! PR welcome.
 
 ![Preview 1](preview1@2x.png)
 
